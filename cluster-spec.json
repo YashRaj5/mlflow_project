@@ -1,31 +1,19 @@
 {
-    "num_workers": 0,
-    "cluster_name": "cluster_0",
-    "spark_version": "13.2.x-cpu-ml-scala2.12",
-    "spark_conf": {
-        "spark.master": "local[*, 4]",
-        "spark.databricks.cluster.profile": "singleNode",
-        "spark.databricks.delta.preview.enabled": "true"
+  "new_cluster": {
+    "spark_version": "7.3.x-scala2.12",
+    "num_workers": 1,
+    "node_type_id": "i3.xlarge"
+  },
+  "libraries": [
+    {
+      "pypi": {
+        "package": "tensorflow"
+      }
     },
-    "azure_attributes": {
-        "first_on_demand": 1,
-        "availability": "ON_DEMAND_AZURE",
-        "spot_bid_max_price": -1
-    },
-    "node_type_id": "Standard_DS3_v2",
-    "driver_node_type_id": "Standard_DS3_v2",
-    "ssh_public_keys": [],
-    "custom_tags": {
-        "ResourceClass": "SingleNode"
-    },
-    "spark_env_vars": {},
-    "autotermination_minutes": 10,
-    "enable_elastic_disk": true,
-    "cluster_source": "UI",
-    "init_scripts": [],
-    "single_user_name": "yash.raj@insight.com",
-    "enable_local_disk_encryption": false,
-    "data_security_mode": "LEGACY_SINGLE_USER_STANDARD",
-    "runtime_engine": "STANDARD",
-    "cluster_id": "0814-150144-dalt3ljz"
+    {
+      "pypi": {
+         "package": "/dbfs/path_to_my_lib.whl"
+      }
+    }
+  ]
 }
